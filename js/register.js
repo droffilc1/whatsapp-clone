@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //sign up a user onclick of the signup button
 document.getElementById("register").onclick = function(){
 
@@ -58,64 +57,3 @@ document.getElementById("register").onclick = function(){
 
 }
 
-=======
-//sign up a user onclick of the signup button
-document.getElementById("register").onclick = function(){
-
-    //get data from input
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const username = document.getElementById("username").value;
-    const phonenumber = document.getElementById("number").value;
-
-    //hide the sign up button
-    document.getElementById("register").style.display = "none";
-
-    //show signing in button
-    document.getElementById("Registering").style.display = "block";
-
-    //run a firebase function to sign up the user
-    firebase.auth().createUserWithEmailAndPassword(email,password).then((userCred)=>{
-
-        //getting the userid from usercred result
-        const theUserId = userCred.user.uid;
-
-        firebase.firestore().collection("users").doc(theUserId).set({
-
-            userEmail:email,
-            userName: username,
-            userId:theUserId,
-            phoneNumber:phonenumber
-
-        }).then(()=>{
-            //if the sign up is successful redirect to home page
-            window.location.href = "home.html";
-        })
-
-        
-    
-    }).catch((error)=>{
-        //if user is not successfully signed up, we are going to catch the error message
-
-        //getting the exact error message
-        const mss = error.message;
-
-        //showing the error message on Bootsrap's toast
-        const toastLiveExample = document.getElementById('liveToast')
-        const toast = new bootstrap.Toast(toastLiveExample)
-
-        document.getElementById("toast-body").innerText = mss
-        toast.show()
-
-        //showing the signup button
-        document.getElementById("register").style.display = "block";
-
-        //hiding the signing up button
-        document.getElementById("Registering").style.display = "none";
-
-
-    })
-
-}
-
->>>>>>> 1939514793c1e423f1e2f8ec1e3c12f604cce45d
