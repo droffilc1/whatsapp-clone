@@ -116,53 +116,7 @@ firebase.auth().onAuthStateChanged((user)=>{
             })
             $("#allMessages").append(content);
         })
-
-
-        // pull all messages
-
-        firebase.firestore().collection("messages").get().then((querySnapshot)=> {
-            querySnapshot.forEach((doc)=> {
-                let message = doc.data().message;
-                let messageFrom = doc.data().messageFrom;
-                let messageTo = doc.data().messageTo;
-                let timeStamp = doc.data().timeStamp;                
-                let date = timeStamp.toDate()
-
-                if(messageFrom === user.uid) {
-
-                    let content = '';
-
-                    content += `<div class="sentmessage">`
-                    content += `<p>${message}</p>`
-                    content += `<h5>${date}</h5>`
-                    content += `</div>`
-
-
-
-                    $("#sentholder").append(content)             
-                    
-                }
-
-                if(messageTo === user.uid) {
-
-                    let content = '';
-
-                    content += `<div class="incomingmessage">`
-                    content += `<p>${message}.</p>`
-                    content += `<h5>${date}</h5>`
-                    content += ` </div>`
-
-                    $("#incomingmessages").append(content);                       
-                   
-                }
-            })
-        })
-
-
-
         
-
-
     }else{
         window.location.href = "register.html"
     }

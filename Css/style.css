@@ -12,7 +12,7 @@
 .leftSec{
     width: 50%;
     height: 100vh;
-    background-image: url(/Images/defcover.jpg);
+    background-image: url(../Images/defcover.jpg);
     background-position: right;
     background-size: cover;
 }
@@ -50,14 +50,15 @@
 
 .homeSection{
     display: flex;
+    background: #EFEAE2;
 }
 
 
 .tweetSection{
     width: 43%;
     height: 100vh;
-   border-left: 1px rgba(128, 128, 128, 0.168) solid;
-   border-right: 1px rgba(128, 128, 128, 0.168) solid;
+    border-left: 1px rgba(128, 128, 128, 0.168) solid;
+    border-right: 1px rgba(128, 128, 128, 0.168) solid;
 }
 
 .homeLeft{
@@ -68,6 +69,7 @@
 .homeRight{
     width: 33%;
     height: 100vh;
+    background-color: #EFEAE2;
 }
 
 .profilePlaceholder{
@@ -177,57 +179,6 @@
 }
 
 
-.coverImage{
-    background-image: url(../Images/600x200.jfif);
-    background-size: cover;
-    height: 200px;
-    width: 100%;
-}
-
-
-.mainProfImage{
-    height: 150px;
-    width: 150px;
-    background-image: url(../Images/defaultprofile.jpg);
-    background-size: cover;
-    border-radius: 50%;
-    position: absolute;
-    background-position: center;
-    top: 180px;
-    left: 25px;
-    z-index: 11;
-
-    border: 5px white solid;
-}
-
-.edtBtn{
-    position: absolute;
-    right: 10px;
-
-    text-decoration: none;
-    border: gray 1px solid;
-    padding: 5px  20px 5px 20px;
-    border-radius: 20px;
-    margin-top: 10px;
-    color: black;
-
-    cursor: pointer;
-}
-
-
-.profSection{
-    position: relative;
-}
-
-
-.profContent{
-    position: absolute;
-    top: 350px;
-    width: 90%;
-    margin-left: 5%;
-}
-
-
 #profUserNamed{
     margin-top: 0;
     padding-top: 0;
@@ -296,6 +247,7 @@
 
 #showAllUsers{
     padding-top: 50px;
+    
 }
 
 .messUserCont{
@@ -347,3 +299,4 @@ background-color: rgba(220, 220, 220, 0.271);
     background-color: rgba(128, 128, 128, 0.325);
     width: fit-content;
 }
+
